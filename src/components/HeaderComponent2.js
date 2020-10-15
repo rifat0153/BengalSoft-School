@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand,NavbarText, NavbarToggler, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 class Header2 extends Component {
@@ -191,15 +191,15 @@ class Header2 extends Component {
                                
                             </Nav>
 
-                        <Dropdown className="d-inline-block"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                        <Dropdown className="d-inline-block header2-position"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
                             <DropdownToggle className="dropdowntoggle1">
-                                <b>HOME</b>
+                            <NavLink className="nav-link"  to='/home'><b>HOME</b></NavLink>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>HOME1</DropdownItem>
-                            <DropdownItem disabled>HOME2</DropdownItem>
-                            <DropdownItem disabled>HOME3</DropdownItem>
-                            <DropdownItem disabled>HOME4</DropdownItem>
+                            <DropdownItem >HOME1</DropdownItem>
+                            <DropdownItem >HOME2</DropdownItem>
+                            <DropdownItem >HOME3</DropdownItem>
+                            <DropdownItem >HOME4</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
@@ -208,72 +208,72 @@ class Header2 extends Component {
                             <b>PAGES </b>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>ABOUT US</DropdownItem>
-                            <DropdownItem disabled>GALLERY</DropdownItem>
-                            <DropdownItem disabled>PRIVACY POLICY</DropdownItem>
-                            <DropdownItem disabled>FAQ</DropdownItem>
+                            <DropdownItem >ABOUT US</DropdownItem>
+                            <DropdownItem >GALLERY</DropdownItem>
+                            <DropdownItem >PRIVACY POLICY</DropdownItem>
+                            <DropdownItem >FAQ</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter3} onMouseLeave={this.onMouseLeave3} isOpen={this.state.dropdownOpen3} toggle={this.toggle3}>
-                            <DropdownToggle>
-                                COURSES
+                            <DropdownToggle className="dropdowntoggle1">
+                               <b>COURSES</b> 
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>COURSES</DropdownItem>
-                            <DropdownItem disabled>COURSE SINGLE</DropdownItem>
+                            <DropdownItem ><Link className="nav-link"  to='/coursedetail'> <b>Courses</b></Link></DropdownItem>
+                            <DropdownItem >COURSE SINGLE</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter4} onMouseLeave={this.onMouseLeave4} isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
-                            <DropdownToggle >
+                            <DropdownToggle className="dropdowntoggle1">
                                 <b>EVENTS</b>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>EVENT LIST 1</DropdownItem>
-                            <DropdownItem disabled>EVENT LIST 2</DropdownItem>
-                            <DropdownItem disabled>EVENT LIST 3</DropdownItem>
+                            <DropdownItem >EVENT LIST 1</DropdownItem>
+                            <DropdownItem>EVENT LIST 2</DropdownItem>
+                            <DropdownItem >EVENT LIST 3</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter5} onMouseLeave={this.onMouseLeave5} isOpen={this.state.dropdownOpen5} toggle={this.toggle5}>
-                            <DropdownToggle >
+                            <DropdownToggle className="dropdowntoggle1">
                                 <b>TEACHERS</b>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>TEACHERS</DropdownItem>
-                            <DropdownItem disabled>TEACHERS 2</DropdownItem>
-                            <DropdownItem disabled>TEACHER SINGLE</DropdownItem>
+                            <DropdownItem >TEACHERS</DropdownItem>
+                            <DropdownItem >TEACHERS 2</DropdownItem>
+                            <DropdownItem >TEACHER SINGLE</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter6} onMouseLeave={this.onMouseLeave6} isOpen={this.state.dropdownOpen6} toggle={this.toggle6}>
-                            <DropdownToggle >
+                            <DropdownToggle className="dropdowntoggle1">
                                 <b>BLOG</b>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>BLOGS</DropdownItem>
-                            <DropdownItem disabled>BLOG SINGLE</DropdownItem>
+                            <DropdownItem >BLOGS</DropdownItem>
+                            <DropdownItem >BLOG SINGLE</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter7} onMouseLeave={this.onMouseLeave7} isOpen={this.state.dropdownOpen7} toggle={this.toggle7}>
-                            <DropdownToggle >
+                            <DropdownToggle className="dropdowntoggle1">
                                <b>SHOP</b> 
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>SHOP</DropdownItem>
-                            <DropdownItem disabled>SHOP SINGLE</DropdownItem>
+                            <DropdownItem >SHOP</DropdownItem>
+                            <DropdownItem >SHOP SINGLE</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 
                         <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter8} onMouseLeave={this.onMouseLeave8} isOpen={this.state.dropdownOpen8} toggle={this.toggle8}>
-                            <DropdownToggle >
+                            <DropdownToggle className="dropdowntoggle1">
                                 <b>CONTACT</b>
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem disabled>CONTACT US</DropdownItem>
-                            <DropdownItem disabled>CONTACT US 2</DropdownItem>
+                            <DropdownItem >CONTACT US</DropdownItem>
+                            <DropdownItem >CONTACT US 2</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
 

@@ -28,32 +28,42 @@ class Header extends Component {
                         {/* <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand> */}
                     
                         <Nav navbar >
-                            <NavItem >
-                                <NavLink className="nav-link"  to='/home'><span className="fa fa-envelope-open-o fa-lg"></span> info@yourmail.com</NavLink>
-                            </NavItem>
+                            <div className="row">
+                                <div >
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/home'><span className="fa fa-envelope-open-o fa-lg"></span> info@yourmail.com</NavLink>
+                                    </NavItem>
+                                </div>
+                                <div className="header1-position">
+                                    <NavbarText className="navbar-text">
+                                        Follow Us:
+                                    </NavbarText>
+                                </div>
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/contactus'><span className="fa fa-facebook fa-lg"></span></NavLink>
+                                    </NavItem>
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/contactus'><span className="fa fa-youtube fa-lg"></span></NavLink>
+                                    </NavItem>
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/contactus'><span className="fa fa-twitter fa-lg"></span></NavLink>
+                                    </NavItem>
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/contactus'><span className="fa fa-instagram fa-lg"></span></NavLink>
+                                    </NavItem>
+                                    <NavItem >
+                                        <NavLink className="nav-link"  to='/contactus'><span className="fa fa-linkedin fa-lg"></span></NavLink>
+                                    </NavItem>
+                                    <NavItem>
+                                        <NavLink className="nav-link"  to='/home'><span></span> <b className="login">Login / Register</b></NavLink>
+                                    </NavItem>
+                                
+                                
+                            </div>
+                            
   
 
-                            <NavbarText>
-                                Follow Us:
-                            </NavbarText>
-                            <NavItem >
-                                <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-facebook fa-lg"></span></NavLink>
-                            </NavItem>
-                            <NavItem >
-                                <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-youtube fa-lg"></span></NavLink>
-                            </NavItem>
-                            <NavItem >
-                                <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-twitter fa-lg"></span></NavLink>
-                            </NavItem>
-                            <NavItem >
-                                <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-instagram fa-lg"></span></NavLink>
-                            </NavItem>
-                            <NavItem >
-                                <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-linkedin fa-lg"></span></NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link"  to='/home'><span></span> <b className="login">Login / Register</b></NavLink>
-                            </NavItem>
+                           
                       
                                 
                         
