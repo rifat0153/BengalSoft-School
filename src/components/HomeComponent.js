@@ -23,6 +23,7 @@ function Home(props) {
             <div className="row align-content-center">
                 <text>This is Home</text>
             </div>
+            
         </div>
     );
 }

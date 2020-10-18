@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import Menu from './MenuComponent';
-// import DishDetail from './DishdetailComponent';
-// import Contact from './ContactComponent';
 import '../App.css';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
@@ -9,9 +6,7 @@ import Header2 from './HeaderComponent2';
 import Example from './DropdownComponent';
 import Header from './HeaderComponent';
 import Courses from './CourseDetailComponent';
-// import { DISHES } from '../shared/dishes';
-// import { COMMENTS } from '../shared/comments';
-// import { PROMOTIONS } from '../shared/promotions';
+
 import { COURSES } from '../shared/courses';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -50,7 +45,8 @@ class Main extends Component {
         <Header2/>
         <Switch>
           <Route path='/home' component={Home} />
-          <Route exact path='/coursedetail' component={() => <Courses courses={this.state.courses} />} />
+          {/* <Route exact path='/coursedetail' component={() => <Courses courses={this.state.courses} />} /> */}
+          <Route exact path='/coursedetail' component={Courses} />
           {/* <Route exact path='/contactus' component={Contact} />
           <Route path='/menu/:dishId' component={DishWithId} /> */}
           <Redirect to="/home" />

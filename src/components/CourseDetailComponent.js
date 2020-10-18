@@ -1,113 +1,52 @@
-import React from 'react';
-import { Table, Jumbotron, Breadcrumb, BreadcrumbItem, Card, Button} from 'reactstrap';
+import React, { Component } from 'react'
+import { COURSES } from '../shared/courses';
 import { Link } from 'react-router-dom';
+import { Table } from 'reactstrap';
 
-renderTableData() {
-    // return props.courses.map((course, index) => {
-    //    const { id, code, name, description } = course //destructuring
+class CourseTable extends Component {
+    constructor(props) {
+       super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
+       this.state = { //state is by default an object
+          courses: COURSES
+       }
+    }   
 
-        const course = props.courses.map((course) => {
-            return (
-                <tr key={course.id}>
-                   <td>{course.id}</td>
-                   <td>{course.name}</td>
-                   <td>{course.age}</td>
-                   <td>{course.email}</td>
-                </tr>
-             );
+    renderTableData() {
+        return this.state.courses.map((course, index) => {
             
-        });
-    }
+           const { id, code, name, featured, description} = course //destructuring
+           return (
+              <tr key={id}>
+                 <td>{id}</td>
+                 <td>{code}</td>
+                 <td>{name}</td>
 
-    //    return (
-    //       <tr key={id}>
-    //          <td>{id}</td>
-    //          <td>{name}</td>
-    //          <td>{age}</td>
-    //          <td>{email}</td>
-    //       </tr>
-    //    );
-    // });
-//  }
+                 <td>{description}</td>
+              </tr>
+           )
+        })
+     }
 
-//  const menu = props.dishes.map((dish) => {
-//     return (
-//         <div className="col-12 col-md-5 m-1"  key={dish.id}>
-//             <RenderMenuItem dish={dish} />
-//         </div>
-//     );
-// })
+     renderTableHeader() {
+        let header = Object.keys(this.state.courses[0])
+        return header.map((key, index) => {
+           return <th key={index}>{key.toUpperCase()}</th>
+        })
+     }
 
-const Courses = (props) => { 
-
-    // const data = props.courses.map((course) => {
-    //     return (
-    //         <div key={course.id}>
-    //             {/* <RenderTable course={course} /> */}
-    //         </div>
-    //     );
-    // });
-
-
-    return(
-        <div >
-            
-            <div>
-                <Jumbotron>
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>OUR COURSES</h1>
-                    <Breadcrumb >
-                        <BreadcrumbItem ><Link to="/home">Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>COURSES</BreadcrumbItem>
-                    </Breadcrumb>
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
-            </div>
-            <div>
-            <h1 id='title'>React Dynamic Table</h1>
-            <table id='courses'>
-               <tbody>
-                  {this.renderTableData()}
-               </tbody>
-            </table>
-         </div>
-            
-        </div>
-        
-    );
-}
-
-export default Courses;
-
-// const Menu = (props) => {
-
-//     const menu = props.dishes.map((dish) => {
-//         return (
-//             <div className="col-12 col-md-5 m-1"  key={dish.id}>
-//                 <RenderMenuItem dish={dish} />
-//             </div>
-//         );
-//     });
-
-//     return (
-//         <div className="container">
-//             <div className="row">
-//                 <Breadcrumb>
-//                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-//                     <BreadcrumbItem active>Menu</BreadcrumbItem>
-//                 </Breadcrumb>
-//                 <div className="col-12">
-//                     <h3>Menu</h3>
-//                     <hr />
-//                 </div>                
-//             </div>
-//             <div className="row">
-//                 {menu}
-//             </div>
-//         </div>
-//     );
-// }
+     render() {
+        return (
+           <div>
+              <h1 id='title'>COURSE DETAILS</h1>
+              <table responsive id='courses'>
+                 <tbody >
+                    <tr>{this.renderTableHeader()}</tr>
+                    {this.renderTableData()}
+                 </tbody>
+              </table>
+           </div>
+        )
+     }
+  }
+  
+  export default CourseTable;
