@@ -1,40 +1,57 @@
 import React from 'react';
-import { Table, Jumbotron, Breadcrumb, BreadcrumbItem, Card, Accordion} from 'reactstrap';
+import { Table, Jumbotron, Breadcrumb, BreadcrumbItem, Card, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderTable({course}) {
+renderTableData() {
+    // return props.courses.map((course, index) => {
+    //    const { id, code, name, description } = course //destructuring
 
-    
-    return(
-        <div>
-            <Accordion>
-                <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="0">
-                        Click me!
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="0">
-                    <Card.Body>Hello! I'm the body</Card.Body>
-                    </Accordion.Collapse>
-                </Card>  
-            </Accordion> 
-        </div> 
-    );    
-    
-}
+        const course = props.courses.map((course) => {
+            return (
+                <tr key={course.id}>
+                   <td>{course.id}</td>
+                   <td>{course.name}</td>
+                   <td>{course.age}</td>
+                   <td>{course.email}</td>
+                </tr>
+             );
+            
+        });
+    }
+
+    //    return (
+    //       <tr key={id}>
+    //          <td>{id}</td>
+    //          <td>{name}</td>
+    //          <td>{age}</td>
+    //          <td>{email}</td>
+    //       </tr>
+    //    );
+    // });
+//  }
+
+//  const menu = props.dishes.map((dish) => {
+//     return (
+//         <div className="col-12 col-md-5 m-1"  key={dish.id}>
+//             <RenderMenuItem dish={dish} />
+//         </div>
+//     );
+// })
 
 const Courses = (props) => { 
 
-    const data = props.courses.map((course) => {
-        return (
-            <div key={course.id}>
-                <RenderTable course={course} />
-            </div>
-        );
-    });
+    // const data = props.courses.map((course) => {
+    //     return (
+    //         <div key={course.id}>
+    //             {/* <RenderTable course={course} /> */}
+    //         </div>
+    //     );
+    // });
 
 
     return(
         <div >
+            
             <div>
                 <Jumbotron>
                     <div className="container">
@@ -50,22 +67,14 @@ const Courses = (props) => {
                     </div>
                 </Jumbotron>
             </div>
-            <div className="container">
-                <Table>
-                    <thead>
-                        <tr>
-                        <th>Course Code</th>
-                        <th>Course Name</th>
-                        <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data}
-                    </tbody>
-                    
-                </Table>
-                
-            </div>
+            <div>
+            <h1 id='title'>React Dynamic Table</h1>
+            <table id='courses'>
+               <tbody>
+                  {this.renderTableData()}
+               </tbody>
+            </table>
+         </div>
             
         </div>
         

@@ -20,7 +20,7 @@ import { Card, CardImg, CardText, CardBody,
 function Home(props) {
     return(
         <div className="container">
-            <div className="row align-items-start">
+            <div className="row align-content-center">
                 <text>This is Home</text>
             </div>
         </div>
