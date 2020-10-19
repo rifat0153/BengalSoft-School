@@ -1,52 +1,66 @@
-import React, { Component } from 'react'
-import { COURSES } from '../shared/courses';
+import React from 'react'
+import {Breadcrumb, BreadcrumbItem, Card, CardBody, CardImg, CardText, CardTitle} from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Table } from 'reactstrap';
 
-class CourseTable extends Component {
-   constructor(props) {
-      super(props) //since we are extending class Table so we have to use super in order to override Component class constructor
-      this.state = { //state is by default an object
-         courses: COURSES
-      }
-   }   
 
-   renderTableData() {
-      return this.state.courses.map((course, index) => {
-         
-         const { id, code, name, featured, description} = course //destructuring
-         return (
-            <tr key={id}>
-               <td>{id}</td>
-               <td>{code}</td>
-               <td>{name}</td>
+    function RenderCourse({course}) {
+       
 
-               <td>{description}</td>
-            </tr>
-         )
-      })
-   }
+        if(course!=null) {
+            return (
+                
+                    <div>
+                        <Card >
+                        <CardBody >
+                            <CardTitle ><h4>Course Code: {course.code}</h4></CardTitle>
+                        </CardBody>
+                        </Card>
+                        <Card >
+                        <CardBody >
+                            <CardText><h5>DESCRIPTION:<br></br>{course.description}</h5></CardText>
+                        </CardBody>
+                        </Card>
+                        
+                    </div>
+            );
+        }
+        else {
+            return(
+                <div></div>
+            );
+        }
+    }
 
-   renderTableHeader() {
-      let header = Object.keys(this.state.courses[0])
-      return header.map((key, index) => {
-         return <th key={index}>{key.toUpperCase()}</th>
-      })
-   }
+    const CourseDetail = (props) => {
+        if(props.course!=null) {
+            return (
+                <div className="container">
+                <div className="row">
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                        <BreadcrumbItem><Link to="/course">Course</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>{props.course.name}</BreadcrumbItem>
+                    </Breadcrumb>
+                    <div className="col-12">
+                        <h3>{props.course.name}</h3>
+                        <hr />
+                    </div>                
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <RenderCourse course={props.course} />
+                    </div>
+                </div>
+                </div>
+            );
+        }
+        else {
+            return(
+                <div></div>
+            );
+        }
+        
+    }
+    
 
-   render() {
-      return (
-         <div>
-            <h1 id='title'>COURSE DETAILS</h1>
-            <table responsive id='courses'>
-               <tbody >
-                  <tr>{this.renderTableHeader()}</tr>
-                  {this.renderTableData()}
-               </tbody>
-            </table>
-         </div>
-      )
-   }
-}
-  
-  export default CourseTable;
+export default CourseDetail

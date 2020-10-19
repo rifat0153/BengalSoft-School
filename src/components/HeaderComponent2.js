@@ -220,7 +220,7 @@ class Header2 extends Component {
                                <b>COURSES</b> 
                             </DropdownToggle>
                             <DropdownMenu>
-                            <DropdownItem ><Link className="nav-link"  to='/coursedetail'> <b>Courses</b></Link></DropdownItem>
+                            <DropdownItem ><Link className="nav-link"  to='/course'> <b>Courses</b></Link></DropdownItem>
                             <DropdownItem >COURSE SINGLE</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>

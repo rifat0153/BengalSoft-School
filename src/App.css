@@ -20,11 +20,21 @@
 #courses td, #courses th {
   border: 1px solid #ddd;
   padding: 8px;
+  width:431px;
 }
+
+.a{
+  color:#0f0f0f;
+}
+
+#courses th:nth-child(1){background-color: #f2f2f2; width:50px;}
+#courses td:nth-child(1){background-color: #f2f2f2; width:50px;}
 
 #courses tr:nth-child(even){background-color: #f2f2f2;}
 
 #courses tr:hover {background-color: #ddd;}
+
+#courses tr {display: block;}
 
 #courses th {
   padding-top: 0px;
@@ -35,27 +45,77 @@
 }
 
 
+/* Registration Button and FORM */
+.registration{
+  height: 300px;
+  width: relative;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: aquamarine;
+  /* justify-content: center; */
+  place-content: center;
+}
+
+.registration-button {
+  height:60px;
+  width: 250px;
+  border-radius: 20px;  
+  background-color: #fdfdff;
+  color: #0f0f0f;
+  font-style: inherit;
+  font-size: 20px; 
+}
+
+.registration-link{
+  color:#0f0f0f;
+}
+
+.registration-form {
+  background: rgb(212, 143, 212);
+  place-content: center;
+}
+
+.registration-form-color {
+  background: rgb(208, 182, 241);
+  margin-top: 10px;
+}
+.registration-form-color input{
+  font-size: 13px ;
+}
+
+.registration-form-submit {
+  transform: translateY(-5px);
+}
+
+.registration-form-label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+}
+
+.placeholder-form-color #name {
+  font-size: 10px !important;
+}
+
+
+
+/* for carousel */
 .carousel-text {
   color: #FFFFFF;
-  margin-top: 64px;
+  margin-top: 40px;
  
 
 }
 
 .carousel{
   background: #07294C;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .carousel-image {
   height: 150px;
   width: 150px;
 }
-
-
-
-
-
 
 h3 {
   background: blue;

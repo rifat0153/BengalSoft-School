@@ -3,12 +3,14 @@ import '../App.css';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Header2 from './HeaderComponent2';
-import Example from './DropdownComponent';
 import Header from './HeaderComponent';
-import Courses from './CourseDetailComponent';
+import CourseTable from './CourseComponent';
+import CourseDetail from './CourseDetailComponent';
+import RegisterForm from './FormComponent';
 
 import { COURSES } from '../shared/courses';
 import { Switch, Route, Redirect } from 'react-router-dom';
+
 
 class Main extends Component {
 
@@ -31,13 +33,12 @@ class Main extends Component {
       );
     }
 
-    // const DishWithId = ({match}) => {
-    //   return(
-    //     //dish id is coming with match as a string paramter..so need to convert it to INT before using it in props 
-    //       <DishDetail dish={this.state.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]} 
-    //         comments={this.state.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))} />
-    //   );
-    // };
+    const CourseWithId = ({match}) => {
+      return(
+        //dish id is coming with match as a string paramter..so need to convert it to INT before using it in props 
+          <CourseDetail course={this.state.courses.filter((item) => item.id === parseInt(match.params.courseId,10))[0]} />
+      );
+    };
 
     return (
       <div>
@@ -46,9 +47,10 @@ class Main extends Component {
         <Switch>
           <Route path='/home' component={Home} />
           {/* <Route exact path='/coursedetail' component={() => <Courses courses={this.state.courses} />} /> */}
-          <Route exact path='/coursedetail' component={Courses} />
-          {/* <Route exact path='/contactus' component={Contact} />
-          <Route path='/menu/:dishId' component={DishWithId} /> */}
+          <Route exact path='/course' component={CourseTable} />
+          <Route exact path='/registerform' component={RegisterForm} />
+          {/* <Route exact path='/contactus' component={Contact} /> */}
+          <Route path='/coursedetail/:courseId' component={CourseWithId} />
           <Redirect to="/home" />
         </Switch>
         <Footer/>

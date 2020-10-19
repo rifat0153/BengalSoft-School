@@ -7,6 +7,8 @@ import Messi from "../images/messi.jpg";
 import Neymar from "../images/neymar.jpg";
 import Kaka from "../images/kaka.jpg";
 import Pele from "../images/pele.jpg";
+import { Button } from "reactstrap";
+import {Link} from 'react-router-dom';
 
 export default class Home extends React.Component {
   render() {
@@ -14,7 +16,7 @@ export default class Home extends React.Component {
       infinite: true,
       speed: 500,
       slidesToShow: 3,
-      slidesToScroll: 2 
+      slidesToScroll: 1, 
     };
     return (
       <div className="container">
@@ -42,11 +44,14 @@ export default class Home extends React.Component {
               <div>
                 <img className="carousel-image" src={Pele} />
               </div>
-            </Slider>
+            </Slider>""
           </div>
-
         </div>
-        
+                 
+        <div className="row registration">
+            <Button className="registration-button" color="primary"><Link className="link"  to='/registerform'><text className="registration-link"><b>REGISTER HERE</b></text></Link></Button>   
+        </div>
+
       </div>
     );
   }
