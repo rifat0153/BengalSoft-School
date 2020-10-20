@@ -33,9 +33,9 @@ import {Link} from 'react-router-dom';
         <Link to={`/coursedetail/${suggestion.id}`}>
           <span>{suggestion.name}</span>
         </Link>
-        <Link to={`/coursedetail/${suggestion.id}`}>
+        {/* <Link to={`/coursedetail/${suggestion.id}`}>
           <span>{suggestion.code}</span>
-        </Link>
+        </Link> */}
       </div>
       
     );
@@ -72,7 +72,7 @@ import {Link} from 'react-router-dom';
     render() {
       const { value, suggestions } = this.state;
       const inputProps = {
-        placeholder: "Type 'c'",
+        placeholder: "Enter Course Name",
         value,
         onChange: this.onChange
       };

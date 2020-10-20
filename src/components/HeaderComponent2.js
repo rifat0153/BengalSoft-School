@@ -1,8 +1,43 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand,NavbarText, NavbarToggler, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { useState } from 'react';
+import { Nav, Navbar, NavbarBrand,NavbarText, NavbarToggler, UncontrolledCollapse, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
 import Autosuggest from 'react-autosuggest';
 import { COURSES } from '../shared/courses';
+
+//for auto suggest
+function escapeRegexCharacters(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getSuggestions(value) {
+  const escapedValue = escapeRegexCharacters(value.trim());
+  
+  if (escapedValue === '') {
+    return [];
+  }
+
+  const regex = new RegExp('^' + escapedValue, 'i');
+
+  return COURSES.filter(course => regex.test(course.name, course.code));
+}
+
+function getSuggestionValue(suggestion) {
+  return (
+    suggestion.name
+  );
+}
+
+function renderSuggestion(suggestion) {
+  return (
+    <div>
+      <Link to={`/coursedetail/${suggestion.id}`}>
+        <span>{suggestion.name}</span>
+      </Link>
+    </div>
+    
+  );
+}
 
 
 class Header2 extends Component {
@@ -39,6 +74,9 @@ class Header2 extends Component {
         this.onMouseLeave9 = this.onMouseLeave9.bind(this);
         
         this.state = {
+          value: '',
+          suggestions: [],
+
           isNavOpen: false,
           dropdownOpen1: false,
           dropdownOpen2: false,
@@ -51,6 +89,28 @@ class Header2 extends Component {
           dropdownOpen9: false,
         };
       }
+
+      //auto suggest
+      onChange = (event, { newValue, method }) => {
+        this.setState({
+          value: newValue
+        });
+      };
+      
+      onSuggestionsFetchRequested = ({ value }) => {
+        this.setState({
+          suggestions: getSuggestions(value)
+        });
+      };
+    
+      onSuggestionsClearRequested = () => {
+        this.setState({
+          suggestions: []
+        });
+      };
+
+
+
 
       //for navbar collapse
       toggleNav() {
@@ -195,6 +255,21 @@ class Header2 extends Component {
 
 
     render() {
+        //for collapse of auto suggest search bar
+        // const [isOpen, setIsOpen] = useState(false);
+
+        // const toggle = () => setIsOpen(!isOpen);
+
+
+
+        //for autosuggest
+        const { value, suggestions } = this.state;
+        const inputProps = {
+          placeholder: "Search for course",
+          value,
+          onChange: this.onChange
+        };
+
         return(
             <div>
                 <Navbar light className="head" expand="md">
@@ -306,19 +381,13 @@ class Header2 extends Component {
                               </Dropdown>
                               </NavItem>
                             
-                              <NavItem>
-                              <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter9} onMouseLeave={this.onMouseLeave9} isOpen={this.state.dropdownOpen9} toggle={this.toggle9}>
-                                    <DropdownToggle className="dropdowntoggle1">
-                                    <NavLink className="nav-link"  to='/search'><i className="fa fa-search fa-lg"></i></NavLink>
-                                    </DropdownToggle>
-                                    <DropdownMenu>
-                                    <DropdownItem >
-                                      <input></input>
-                                    </DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
+                             
+                              <div>
                               
-                              </NavItem>
+                                <NavLink className="nav-link"  to='#'><i id="search" className="fa fa-search fa-lg"></i></NavLink>
+                                
+                                
+                              </div>
 
                               <NavItem>
                                 <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter8} onMouseLeave={this.onMouseLeave8} isOpen={this.state.dropdownOpen8} toggle={this.toggle8}>
@@ -342,6 +411,18 @@ class Header2 extends Component {
                         
                     </div>
                 </Navbar>
+
+                <div className="container header2-search">
+                  <UncontrolledCollapse toggler="#search">
+                    <Autosuggest 
+                      suggestions={suggestions}
+                      onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                      onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                      getSuggestionValue={getSuggestionValue}
+                      renderSuggestion={renderSuggestion}
+                      inputProps={inputProps} />
+                  </UncontrolledCollapse>
+                </div>
                 
             </div>
         );

@@ -302,6 +302,11 @@ address{
   background-color: #FFFFFF;
 }
 
+.header2-search {
+  text-align: right;
+  transform: translateY(-20px);
+}
+
 .dropdown{
   background-color:#FFFFFF ;
 }

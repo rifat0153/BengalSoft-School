@@ -23,5 +23,11 @@ export const COURSES =
         code:'CSE-499',
         name:'Final Year Project',  
         description:'Team work makes the dream work'
-        }
+        },
+        {
+            id: 4,
+            code:'Bio-205',
+            name:'Cell Divison',
+            description:'Intermediate Levele Course'                    
+            },
     ];
