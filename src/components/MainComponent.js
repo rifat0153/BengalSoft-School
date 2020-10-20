@@ -7,6 +7,7 @@ import Header from './HeaderComponent';
 import CourseTable from './CourseComponent';
 import CourseDetail from './CourseDetailComponent';
 import RegisterForm from './FormComponent';
+import Search from './SearchComponent';
 
 import { COURSES } from '../shared/courses';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -49,6 +50,7 @@ class Main extends Component {
           {/* <Route exact path='/coursedetail' component={() => <Courses courses={this.state.courses} />} /> */}
           <Route exact path='/course' component={CourseTable} />
           <Route exact path='/registerform' component={RegisterForm} />
+          <Route exact path='/search' component={Search} />
           {/* <Route exact path='/contactus' component={Contact} /> */}
           <Route path='/coursedetail/:courseId' component={CourseWithId} />
           <Redirect to="/home" />

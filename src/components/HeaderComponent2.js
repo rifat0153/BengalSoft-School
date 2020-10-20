@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand,NavbarText, NavbarToggler, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
+import Autosuggest from 'react-autosuggest';
+import { COURSES } from '../shared/courses';
 
 
 class Header2 extends Component {
@@ -16,6 +18,7 @@ class Header2 extends Component {
         this.toggle6 = this.toggle6.bind(this);
         this.toggle7 = this.toggle7.bind(this);
         this.toggle8 = this.toggle8.bind(this);
+        this.toggle9 = this.toggle9.bind(this);
         this.onMouseEnter1 = this.onMouseEnter1.bind(this);
         this.onMouseLeave1 = this.onMouseLeave1.bind(this);
         this.onMouseEnter2 = this.onMouseEnter2.bind(this);
@@ -32,6 +35,8 @@ class Header2 extends Component {
         this.onMouseLeave7 = this.onMouseLeave7.bind(this);
         this.onMouseEnter8 = this.onMouseEnter8.bind(this);
         this.onMouseLeave8 = this.onMouseLeave8.bind(this);
+        this.onMouseEnter9 = this.onMouseEnter9.bind(this);
+        this.onMouseLeave9 = this.onMouseLeave9.bind(this);
         
         this.state = {
           isNavOpen: false,
@@ -43,13 +48,14 @@ class Header2 extends Component {
           dropdownOpen6: false,
           dropdownOpen7: false,
           dropdownOpen8: false,
+          dropdownOpen9: false,
         };
       }
 
       //for navbar collapse
       toggleNav() {
         this.setState({
-          isNav1Open: !this.state.isNav1Open
+          isNavOpen: !this.state.isNavOpen
         });
       }
       
@@ -169,6 +175,18 @@ class Header2 extends Component {
         this.setState({dropdownOpen8: false});
       }
 
+      //for Contact ----- 9
+      toggle9() {
+        this.setState(prevState => ({
+          dropdownOpen9: !prevState.dropdownOpen9
+        }));
+      }
+      onMouseEnter9() {
+        this.setState({dropdownOpen9: true});
+      }
+      onMouseLeave9() {
+        this.setState({dropdownOpen9: false});
+      }
 
 
 
@@ -179,108 +197,146 @@ class Header2 extends Component {
     render() {
         return(
             <div>
-                <Navbar className="head" expand="md">
+                <Navbar light className="head" expand="md">
                     <div className="container header2">
                         <NavbarToggler onClick={this.toggleNav} />
                         {/* <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='EDUBIN' /></NavbarBrand> */}
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar className="float-right">
+                            <Nav navbar>
                                 <NavItem>
-                                    <NavLink className="nav-link"  to='/home'><span className="fa fa-graduation-cap fa-lg " height="30" width="41"></span> <b className="logotext">EDUBIN</b></NavLink>
+                                    <NavLink className="nav-link"  to='/home'><span className="fa fa-graduation-cap fa-lg " height="30" width="41"></span></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="nav-link"  to='/home'> <b className="logotext">EDUBIN</b></NavLink>
+                                </NavItem>
+
+                                <NavItem>
+                                  <Dropdown className="d-inline-block header2-position"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                                  <DropdownToggle className="dropdowntoggle1">
+                                  <NavLink className="nav-link"  to='/home'><b>HOME</b></NavLink>
+                                  </DropdownToggle>
+                                  <DropdownMenu>
+                                  <DropdownItem >HOME1</DropdownItem>
+                                  <DropdownItem >HOME2</DropdownItem>
+                                  <DropdownItem >HOME3</DropdownItem>
+                                  <DropdownItem >HOME4</DropdownItem>
+                                  </DropdownMenu>
+                                  </Dropdown>
+                                </NavItem>
+
+                                
+                                <NavItem>
+                                  <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter2} onMouseLeave={this.onMouseLeave2} isOpen={this.state.dropdownOpen2} toggle={this.toggle2}>
+                                  <DropdownToggle className="dropdowntoggle1">
+                                  <NavLink className="nav-link"  to='/home'><b>PAGES</b></NavLink>
+                                  </DropdownToggle>
+                                  <DropdownMenu>
+                                  <DropdownItem >ABOUT US</DropdownItem>
+                                  <DropdownItem >GALLERY</DropdownItem>
+                                  <DropdownItem >PRIVACY POLICY</DropdownItem>
+                                  <DropdownItem >FAQ</DropdownItem>
+                                  </DropdownMenu>
+                                  </Dropdown>
                                 </NavItem>
                                
-                            </Nav>
 
-                        <Dropdown className="d-inline-block header2-position"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
-                            <DropdownToggle className="dropdowntoggle1">
-                            <NavLink className="nav-link"  to='/home'><b>HOME</b></NavLink>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >HOME1</DropdownItem>
-                            <DropdownItem >HOME2</DropdownItem>
-                            <DropdownItem >HOME3</DropdownItem>
-                            <DropdownItem >HOME4</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter2} onMouseLeave={this.onMouseLeave2} isOpen={this.state.dropdownOpen2} toggle={this.toggle2}>
-                            <DropdownToggle className="dropdowntoggle1">
-                            <b>PAGES </b>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >ABOUT US</DropdownItem>
-                            <DropdownItem >GALLERY</DropdownItem>
-                            <DropdownItem >PRIVACY POLICY</DropdownItem>
-                            <DropdownItem >FAQ</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter3} onMouseLeave={this.onMouseLeave3} isOpen={this.state.dropdownOpen3} toggle={this.toggle3}>
-                            <DropdownToggle className="dropdowntoggle1">
-                               <b>COURSES</b> 
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem ><Link className="nav-link"  to='/course'> <b>Courses</b></Link></DropdownItem>
-                            <DropdownItem >COURSE SINGLE</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter4} onMouseLeave={this.onMouseLeave4} isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
-                            <DropdownToggle className="dropdowntoggle1">
-                                <b>EVENTS</b>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >EVENT LIST 1</DropdownItem>
-                            <DropdownItem>EVENT LIST 2</DropdownItem>
-                            <DropdownItem >EVENT LIST 3</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter5} onMouseLeave={this.onMouseLeave5} isOpen={this.state.dropdownOpen5} toggle={this.toggle5}>
-                            <DropdownToggle className="dropdowntoggle1">
-                                <b>TEACHERS</b>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >TEACHERS</DropdownItem>
-                            <DropdownItem >TEACHERS 2</DropdownItem>
-                            <DropdownItem >TEACHER SINGLE</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter6} onMouseLeave={this.onMouseLeave6} isOpen={this.state.dropdownOpen6} toggle={this.toggle6}>
-                            <DropdownToggle className="dropdowntoggle1">
-                                <b>BLOG</b>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >BLOGS</DropdownItem>
-                            <DropdownItem >BLOG SINGLE</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter7} onMouseLeave={this.onMouseLeave7} isOpen={this.state.dropdownOpen7} toggle={this.toggle7}>
-                            <DropdownToggle className="dropdowntoggle1">
-                               <b>SHOP</b> 
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >SHOP</DropdownItem>
-                            <DropdownItem >SHOP SINGLE</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter8} onMouseLeave={this.onMouseLeave8} isOpen={this.state.dropdownOpen8} toggle={this.toggle8}>
-                            <DropdownToggle className="dropdowntoggle1">
-                                <b>CONTACT</b>
-                            </DropdownToggle>
-                            <DropdownMenu>
-                            <DropdownItem >CONTACT US</DropdownItem>
-                            <DropdownItem >CONTACT US 2</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        
-                           <NavLink className="nav-link float-right"  to='/contactus'><span className="fa fa-shopping-bag fa-lg"></span></NavLink>
-                      
+                              <NavItem>
+                                <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter3} onMouseLeave={this.onMouseLeave3} isOpen={this.state.dropdownOpen3} toggle={this.toggle3}>
+                                <DropdownToggle className="dropdowntoggle1">
+                                <NavLink className="nav-link"  to='/home'><b>COURSES</b></NavLink>
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                <DropdownItem ><Link className="nav-link"  to='/course'> <b>Courses</b></Link></DropdownItem>
+                                <DropdownItem >COURSE SINGLE</DropdownItem>
+                                </DropdownMenu>
+                                </Dropdown>
+                              </NavItem>
                             
+
+                              <NavItem>
+                                <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter4} onMouseLeave={this.onMouseLeave4} isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
+                                <DropdownToggle className="dropdowntoggle1">
+                                <NavLink className="nav-link"  to='/home'><b>EVENTS</b></NavLink>
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                <DropdownItem >EVENT LIST 1</DropdownItem>
+                                <DropdownItem>EVENT LIST 2</DropdownItem>
+                                <DropdownItem >EVENT LIST 3</DropdownItem>
+                                </DropdownMenu>
+                                </Dropdown>
+                              </NavItem>
+                            
+
+                            <NavItem>
+                              <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter5} onMouseLeave={this.onMouseLeave5} isOpen={this.state.dropdownOpen5} toggle={this.toggle5}>
+                                  <DropdownToggle className="dropdowntoggle1">
+                                  <NavLink className="nav-link"  to='/home'><b>TEACHERS</b></NavLink>
+                                  </DropdownToggle>
+                                  <DropdownMenu>
+                                  <DropdownItem >TEACHERS</DropdownItem>
+                                  <DropdownItem >TEACHERS 2</DropdownItem>
+                                  <DropdownItem >TEACHER SINGLE</DropdownItem>
+                                  </DropdownMenu>
+                              </Dropdown>
+                              </NavItem>
+                            
+
+                              <NavItem>
+                                <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter6} onMouseLeave={this.onMouseLeave6} isOpen={this.state.dropdownOpen6} toggle={this.toggle6}>
+                                    <DropdownToggle className="dropdowntoggle1">
+                                    <NavLink className="nav-link"  to='/home'><b>BLOGS</b></NavLink>
+                                    </DropdownToggle>
+                                    <DropdownMenu>
+                                    <DropdownItem >BLOGS</DropdownItem>
+                                    <DropdownItem >BLOG SINGLE</DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                              </NavItem>
+                            
+
+                              <NavItem>
+                              <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter7} onMouseLeave={this.onMouseLeave7} isOpen={this.state.dropdownOpen7} toggle={this.toggle7}>
+                                  <DropdownToggle className="dropdowntoggle1">
+                                  <NavLink className="nav-link"  to='/home'><b>SHOP</b></NavLink>
+                                  </DropdownToggle>
+                                  <DropdownMenu>
+                                  <DropdownItem >SHOP</DropdownItem>
+                                  <DropdownItem >SHOP SINGLE</DropdownItem>
+                                  </DropdownMenu>
+                              </Dropdown>
+                              </NavItem>
+                            
+                              <NavItem>
+                              <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter9} onMouseLeave={this.onMouseLeave9} isOpen={this.state.dropdownOpen9} toggle={this.toggle9}>
+                                    <DropdownToggle className="dropdowntoggle1">
+                                    <NavLink className="nav-link"  to='/search'><i className="fa fa-search fa-lg"></i></NavLink>
+                                    </DropdownToggle>
+                                    <DropdownMenu>
+                                    <DropdownItem >
+                                      <input></input>
+                                    </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                              
+                              </NavItem>
+
+                              <NavItem>
+                                <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter8} onMouseLeave={this.onMouseLeave8} isOpen={this.state.dropdownOpen8} toggle={this.toggle8}>
+                                    <DropdownToggle className="dropdowntoggle1">
+                                    <NavLink className="nav-link"  to='/home'><b>CONTACT</b></NavLink>
+                                    </DropdownToggle>
+                                    <DropdownMenu>
+                                    <DropdownItem >CONTACT US</DropdownItem>
+                                    <DropdownItem >CONTACT US 2</DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                              </NavItem>
+
+                            <NavItem>
+                              <NavLink className="nav-link"  to='/home'><i className="fa fa-shopping-bag fa-lg"></i></NavLink>
+                            </NavItem>
+
+                          </Nav>
                             
                         </Collapse>
                         

@@ -22,11 +22,12 @@ class Header extends Component {
     render() {
         return(
             <div className="header2">
-                <Navbar className="header1 " expand="md">
-                    <div className="container d-done d-md-block">
+                <Navbar dark className="header1 " expand="md">
+                    <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         {/* <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand> */}
                     
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar >
                             <div className="row">
                                 <div >
@@ -35,9 +36,9 @@ class Header extends Component {
                                     </NavItem>
                                 </div>
                                 <div className="header1-position">
-                                    <NavbarText className="navbar-text">
+                                    <NavItem className="navbar-text">
                                         Follow Us:
-                                    </NavbarText>
+                                    </NavItem>
                                 </div>
                                     <NavItem >
                                         <NavLink className="nav-link"  to='/contactus'><span className="fa fa-facebook fa-lg"></span></NavLink>
@@ -59,15 +60,11 @@ class Header extends Component {
                                     </NavItem>
                                 
                                 
-                            </div>
-                            
-  
-
-                           
-                      
-                                
+                            </div>  
                         
                         </Nav>
+                        </Collapse>
+
                     </div>
                 </Navbar>
             </div>
