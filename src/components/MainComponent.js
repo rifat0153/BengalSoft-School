@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../App.css';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
-import Header2 from './HeaderComponent2';
 import Header from './HeaderComponent';
+import Header2 from './HeaderComponent2';
+import Header3 from './HeaderComponent3';
 import CourseTable from './CourseComponent';
 import CourseDetail from './CourseDetailComponent';
 import RegisterForm from './FormComponent';
@@ -46,6 +47,7 @@ class Main extends Component {
       <div>
         <Header/>
         <Header2/>
+        <Header3/>
         <Switch>
           <Route path='/home' component={Home} />
           {/* <Route exact path='/coursedetail' component={() => <Courses courses={this.state.courses} />} /> */}

@@ -300,6 +300,20 @@ address{
 }
 
 /* HeaderComponent1 */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown {
+  background-color: transparent !important;
+}
+.login{
+  color: rgb(240, 28, 187);
+}
+
+
+
+/* 
+
 .header1{
   background-color: #07294D;
 }
@@ -313,54 +327,53 @@ address{
   margin-left: 50px;
 }
 
-.login{
-  color: yellow;
-}
+
 
 .navbar-text {
   color:#FFFFFF;
-}
+} */
 
-.header2 {
+/* HeaderComponent2 */
+/* .header2 {
   background-color: #FFFFFF;
 }
-
 .header2-logo {
   transform: translateX(-15px);
 }
-
-
 .head{
   padding: 20px;
 }
-
 .logotext{
   font-size: 30px;
 }
-
-
 .header2-search {
   /* text-align: right;
   transform: translateY(-20px); */
-  margin-top: 15px;
+  /* margin-top: 15px;
   margin-left: 10px;
-}
+} */
 
-.searchmodal-header {
-  background: #c4eedc;
-}
-
-.searchmodal-body {
-  background: #e6f1ec;
-}
-
-.dropdown{
+/* .dropdown{
   background-color:#FFFFFF ;
 }
-
 .dropdowntoggle1{
   color: #07294D;
   background: #FFFFFF;
   border:none;
+}  */ 
+
+/* HEADERCOMPONENT 3 */
+.header3-content {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  margin:50px;
 }
 
+/* SearchModal Component */
+.searchmodal-header {
+  background: #c4eedc;
+ } 
+.searchmodal-body {
+  background: #e6f1ec;
+}
