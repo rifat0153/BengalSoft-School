@@ -303,56 +303,64 @@ address{
 .header1{
   background-color: #07294D;
 }
+
 .header1-position{
   margin-left: 582px;
   
 }
+
+.header2-position{
+  margin-left: 50px;
+}
+
 .login{
   color: yellow;
 }
 
-/* HeaderComponent2 */
-
-/* .header2-position{
-  margin-left: 50px;
-}
 .navbar-text {
   color:#FFFFFF;
-} */
-.header2 {
-  background-color: #db1717;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-/* .header2-logo {
+
+.header2 {
+  background-color: #FFFFFF;
+}
+
+.header2-logo {
   transform: translateX(-15px);
 }
+
+
 .head{
   padding: 20px;
 }
+
 .logotext{
   font-size: 30px;
-} */
-/* .header2-search { */
+}
+
+
+.header2-search {
   /* text-align: right;
   transform: translateY(-20px); */
-  /* margin-top: 15px;
+  margin-top: 15px;
   margin-left: 10px;
 }
+
 .searchmodal-header {
   background: #c4eedc;
 }
+
 .searchmodal-body {
   background: #e6f1ec;
-/* }  */
-/* .dropdown{
+}
+
+.dropdown{
   background-color:#FFFFFF ;
 }
+
 .dropdowntoggle1{
-  /* color: #07294D; */
-  /* background: #FFFFFF;
-  border:none; */
-/* } */
+  color: #07294D;
+  background: #FFFFFF;
+  border:none;
+}
 

@@ -22,7 +22,7 @@ class Header extends Component {
     render() {
         return(
             <div className="header2">
-                <Navbar dark className="header1 " expand="md">
+                <Navbar dark className="header1" expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         {/* <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand> */}
@@ -35,7 +35,7 @@ class Header extends Component {
                                         <NavLink className="nav-link"  to='/home'><span className="fa fa-envelope-open-o fa-lg"></span> info@yourmail.com</NavLink>
                                     </NavItem>
                                 </div>
-                                <div className="header1-position">
+                                <div >
                                     <NavItem className="navbar-text">
                                         Follow Us:
                                     </NavItem>

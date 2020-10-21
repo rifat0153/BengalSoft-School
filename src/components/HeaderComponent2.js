@@ -212,7 +212,7 @@ class Header2 extends Component {
                         <NavbarToggler onClick={this.toggleNav} />
                         {/* <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='EDUBIN' /></NavbarBrand> */}
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
+                            <Nav navbar className="mr-auto">
                                 <NavItem>
                                     <NavLink className="nav-link"  to='/home'><span className="fa fa-graduation-cap fa-lg header2-logo" height="30" width="41"></span></NavLink>
                                 </NavItem>
@@ -221,7 +221,7 @@ class Header2 extends Component {
                                 </NavItem>
 
                                 <NavItem>
-                                  <Dropdown className="d-inline-block"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                                  <Dropdown className="d-inline-block header2-position"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
                                   <DropdownToggle className="dropdowntoggle1">
                                   <NavLink className="nav-link"  to='/home'><b>HOME</b></NavLink>
                                   </DropdownToggle>
