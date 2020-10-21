@@ -37,7 +37,7 @@ class CourseTable extends Component {
    renderTableHeader() {
       let header = Object.keys(this.state.courses[0])
       return header.map((key, index) => {
-         return <th key={index}>{key.toUpperCase()}</th>
+         return <th scope="row" key={index}>{key.toUpperCase()}</th>
       })
    }
 
@@ -45,12 +45,12 @@ class CourseTable extends Component {
       return (
          <div>
             <h1 id='title'>COURSE DETAILS</h1>
-            <table responsive id='courses' onClick={this.renderTableData()}>
+            <Table responsive id='courses' onClick={this.renderTableData()}>
                <tbody >
                   <tr>{this.renderTableHeader()}</tr>
                   {this.renderTableData()}
                </tbody>
-            </table>
+            </Table>
          </div>
       )
    }

@@ -3,6 +3,7 @@ import Autosuggest from 'react-autosuggest';
 import { COURSES } from '../shared/courses';
 import {Link} from 'react-router-dom';
 
+
   
   // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
   function escapeRegexCharacters(str) {
@@ -31,11 +32,8 @@ import {Link} from 'react-router-dom';
     return (
       <div>
         <Link to={`/coursedetail/${suggestion.id}`}>
-          <span>{suggestion.name}</span>
+          <span><b>{suggestion.name}</b></span>
         </Link>
-        {/* <Link to={`/coursedetail/${suggestion.id}`}>
-          <span>{suggestion.code}</span>
-        </Link> */}
       </div>
       
     );
@@ -71,7 +69,7 @@ import {Link} from 'react-router-dom';
   
     render() {
       const { value, suggestions } = this.state;
-      const inputProps = {
+      const input = {
         placeholder: "Enter Course Name",
         value,
         onChange: this.onChange
@@ -84,7 +82,7 @@ import {Link} from 'react-router-dom';
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
-          inputProps={inputProps} />
+          inputProps={input} />
       );
     }
   }

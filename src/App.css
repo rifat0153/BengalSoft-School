@@ -97,6 +97,28 @@
 }
 
 
+/* Curriculum Component*/
+
+.calendar-cardheader {
+  background: rgb(204, 180, 235);
+  margin-left:-15px;
+  margin-right:-15px;
+  margin-top:-1px;
+}
+.calendar-cardbody {
+  background: rgb(231, 229, 235);
+  margin-left:-15px;
+  margin-right:-15px;
+}
+.calendar-other {
+  background-color: rgb(236, 236, 238);
+  display: flex;
+  border-radius: 10px;
+}
+.calendar-text{
+  color: red;
+}
+
 
 /* for carousel */
 .carousel-text {
@@ -277,51 +299,60 @@ address{
   color:#0f0f0f;
 }
 
+/* HeaderComponent1 */
 .header1{
   background-color: #07294D;
 }
-
 .header1-position{
   margin-left: 582px;
   
 }
-
-.header2-position{
-  margin-left: 50px;
-}
-
 .login{
   color: yellow;
 }
 
+/* HeaderComponent2 */
+
+/* .header2-position{
+  margin-left: 50px;
+}
 .navbar-text {
   color:#FFFFFF;
-}
-
+} */
 .header2 {
-  background-color: #FFFFFF;
+  background-color: #db1717;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.header2-search {
-  text-align: right;
-  transform: translateY(-20px);
+/* .header2-logo {
+  transform: translateX(-15px);
 }
-
-.dropdown{
-  background-color:#FFFFFF ;
-}
-
-.dropdowntoggle1{
-  color: #07294D;
-  background: #FFFFFF;
-  border:none;
-}
-
 .head{
   padding: 20px;
 }
-
 .logotext{
   font-size: 30px;
+} */
+/* .header2-search { */
+  /* text-align: right;
+  transform: translateY(-20px); */
+  /* margin-top: 15px;
+  margin-left: 10px;
 }
+.searchmodal-header {
+  background: #c4eedc;
+}
+.searchmodal-body {
+  background: #e6f1ec;
+/* }  */
+/* .dropdown{
+  background-color:#FFFFFF ;
+}
+.dropdowntoggle1{
+  /* color: #07294D; */
+  /* background: #FFFFFF;
+  border:none; */
+/* } */
 

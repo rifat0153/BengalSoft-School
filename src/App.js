@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import Main from './components/MainComponent';
-import Footer from './components/FooterComponent';
 import './App.css';
 
 class App extends Component {

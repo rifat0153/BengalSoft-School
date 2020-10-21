@@ -1,43 +1,9 @@
 import React, { Component } from 'react';
-import { useState } from 'react';
-import { Nav, Navbar, NavbarBrand,NavbarText, NavbarToggler, UncontrolledCollapse, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Nav, Navbar, NavbarToggler, UncontrolledCollapse, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
-import Autosuggest from 'react-autosuggest';
-import { COURSES } from '../shared/courses';
+import Search from './SearchComponent';
+import ModalExample from './SearchModalComponent';
 
-//for auto suggest
-function escapeRegexCharacters(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function getSuggestions(value) {
-  const escapedValue = escapeRegexCharacters(value.trim());
-  
-  if (escapedValue === '') {
-    return [];
-  }
-
-  const regex = new RegExp('^' + escapedValue, 'i');
-
-  return COURSES.filter(course => regex.test(course.name, course.code));
-}
-
-function getSuggestionValue(suggestion) {
-  return (
-    suggestion.name
-  );
-}
-
-function renderSuggestion(suggestion) {
-  return (
-    <div>
-      <Link to={`/coursedetail/${suggestion.id}`}>
-        <span>{suggestion.name}</span>
-      </Link>
-    </div>
-    
-  );
-}
 
 
 class Header2 extends Component {
@@ -89,25 +55,6 @@ class Header2 extends Component {
           dropdownOpen9: false,
         };
       }
-
-      //auto suggest
-      onChange = (event, { newValue, method }) => {
-        this.setState({
-          value: newValue
-        });
-      };
-      
-      onSuggestionsFetchRequested = ({ value }) => {
-        this.setState({
-          suggestions: getSuggestions(value)
-        });
-      };
-    
-      onSuggestionsClearRequested = () => {
-        this.setState({
-          suggestions: []
-        });
-      };
 
 
 
@@ -253,22 +200,10 @@ class Header2 extends Component {
 
 
 
-
+      
     render() {
-        //for collapse of auto suggest search bar
-        // const [isOpen, setIsOpen] = useState(false);
 
-        // const toggle = () => setIsOpen(!isOpen);
-
-
-
-        //for autosuggest
-        const { value, suggestions } = this.state;
-        const inputProps = {
-          placeholder: "Search for course",
-          value,
-          onChange: this.onChange
-        };
+      
 
         return(
             <div>
@@ -279,19 +214,19 @@ class Header2 extends Component {
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
-                                    <NavLink className="nav-link"  to='/home'><span className="fa fa-graduation-cap fa-lg " height="30" width="41"></span></NavLink>
+                                    <NavLink className="nav-link"  to='/home'><span className="fa fa-graduation-cap fa-lg header2-logo" height="30" width="41"></span></NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link"  to='/home'> <b className="logotext">EDUBIN</b></NavLink>
                                 </NavItem>
 
                                 <NavItem>
-                                  <Dropdown className="d-inline-block header2-position"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                                  <Dropdown className="d-inline-block"  onMouseOver={this.onMouseEnter1} onMouseLeave={this.onMouseLeave1} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
                                   <DropdownToggle className="dropdowntoggle1">
                                   <NavLink className="nav-link"  to='/home'><b>HOME</b></NavLink>
                                   </DropdownToggle>
                                   <DropdownMenu>
-                                  <DropdownItem >HOME1</DropdownItem>
+                                  <DropdownItem >HOME1 </DropdownItem>
                                   <DropdownItem >HOME2</DropdownItem>
                                   <DropdownItem >HOME3</DropdownItem>
                                   <DropdownItem >HOME4</DropdownItem>
@@ -326,17 +261,16 @@ class Header2 extends Component {
                                 </DropdownMenu>
                                 </Dropdown>
                               </NavItem>
-                            
 
                               <NavItem>
                                 <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter4} onMouseLeave={this.onMouseLeave4} isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
                                 <DropdownToggle className="dropdowntoggle1">
-                                <NavLink className="nav-link"  to='/home'><b>EVENTS</b></NavLink>
+                                <NavLink className="nav-link"  to='/home'><b>CURRICULUM</b></NavLink>
                                 </DropdownToggle>
                                 <DropdownMenu>
-                                <DropdownItem >EVENT LIST 1</DropdownItem>
-                                <DropdownItem>EVENT LIST 2</DropdownItem>
-                                <DropdownItem >EVENT LIST 3</DropdownItem>
+                                <DropdownItem >OUR CURRICULUM</DropdownItem>
+                                <DropdownItem><Link className="nav-link"  to='/calendar'> <b>ACADEMIC CALENDAR</b></Link></DropdownItem>
+                                <DropdownItem >CLASS TIME TABLE</DropdownItem>
                                 </DropdownMenu>
                                 </Dropdown>
                               </NavItem>
@@ -382,12 +316,10 @@ class Header2 extends Component {
                               </NavItem>
                             
                              
-                              <div>
-                              
-                                <NavLink className="nav-link"  to='#'><i id="search" className="fa fa-search fa-lg"></i></NavLink>
-                                
-                                
-                              </div>
+                              <NavItem className="header2-search">
+                                <ModalExample/>
+                              </NavItem>
+                            
 
                               <NavItem>
                                 <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter8} onMouseLeave={this.onMouseLeave8} isOpen={this.state.dropdownOpen8} toggle={this.toggle8}>
@@ -412,17 +344,13 @@ class Header2 extends Component {
                     </div>
                 </Navbar>
 
-                <div className="container header2-search">
+                {/* <div className="container header2-search">
                   <UncontrolledCollapse toggler="#search">
-                    <Autosuggest 
-                      suggestions={suggestions}
-                      onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                      onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                      getSuggestionValue={getSuggestionValue}
-                      renderSuggestion={renderSuggestion}
-                      inputProps={inputProps} />
+                      <Search/>
                   </UncontrolledCollapse>
-                </div>
+                  
+                  
+                </div> */}
                 
             </div>
         );
