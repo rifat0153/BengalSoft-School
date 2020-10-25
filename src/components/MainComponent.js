@@ -11,6 +11,8 @@ import RegisterForm from './FormComponent';
 import Search from './SearchComponent';
 import Calendar from './CalendarComponent';
 import Teacher from './TeacherComponent';
+import Contact from './ContactComponent';
+import MapContainer from './MapComponent';
 
 import { COURSES } from '../shared/courses';
 import { TEACHERS } from '../shared/teachers';
@@ -57,6 +59,8 @@ class Main extends Component {
           <Route exact path='/registerform' component={RegisterForm} />
           <Route exact path='/search' component={Search} />
           <Route exact path='/calendar' component={Calendar} />
+          <Route exact path='/contact' component={Contact} />
+          <Route exact path='/map' component={MapContainer} />
           <Route exact path='/teacher' component={() => <Teacher teachers={this.state.teachers} />} />
           {/* <Route exact path='/contactus' component={Contact} /> */}
           <Route path='/coursedetail/:courseId' component={CourseWithId} />

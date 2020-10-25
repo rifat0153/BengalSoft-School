@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavbarToggler, UncontrolledCollapse, Collapse, NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink, Link } from 'react-router-dom';
-import Search from './SearchComponent';
 import ModalExample from './SearchModalComponent';
 
 

@@ -44,7 +44,188 @@
   color: white;
 }
 
+/* CONTACT COMPONENT ---------------------------------------------------------------------------------- */
+@media screen and (max-width: 2000px) {
+  .contact-content {
+    background: rgb(102,124,198);
+    height:300px;
+  } 
+  .contact-heading {
+    margin:auto;
+    width: 800px;
+  } 
+  .contact-headingtext {
+    margin-left: 18rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+  .contact-text1 {
+    margin-left: 15.5rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .contact-text2 {
+    margin-left: 9rem;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .contact-map {
+    margin-top: 1rem;
+    height: 40rem;
+  }
+}
 
+@media screen and (max-width: 1400px) {
+  .contact-content {
+    background: rgb(102,124,198);
+    height:300px;
+  } 
+  .contact-heading {
+    margin:auto;
+    width: 800px;
+  } 
+  .contact-headingtext {
+    margin-left: 18rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+  .contact-text1 {
+    margin-left: 15.5rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .contact-text2 {
+    margin-left: 9rem;
+    color: #FFFFFF;
+    font-size: 21px;
+    font-weight: 400;
+  }
+  .contact-map {
+    margin-top: 1rem;
+    height: 37rem;
+    /* width: 30rem; */
+  }
+}
+@media screen and (max-width: 400px) {
+  .contact-content {
+    background: rgb(102,124,198);
+    height:200px;
+  }
+  .contact-heading {
+    margin:auto;
+    width: 300px;;
+  }
+  .contact-headingtext {
+    margin-left: 3rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+  .contact-text1 {
+    margin-left: 3rem;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .contact-text2 {
+    margin-left: 0rem;
+    color: #FFFFFF;
+    font-size: .9rem;
+    font-weight: 400;
+  } 
+  .contact-map {
+    margin-top: 1rem;
+    height: 38.5rem;
+  }
+}
+
+
+
+
+/* Curriculum Component*/
+
+.calendar-cardheader {
+  background: rgb(204, 180, 235);
+  margin-left:-15px;
+  margin-right:-15px;
+  margin-top:-1px;
+}
+.calendar-cardbody {
+  background: rgb(231, 229, 235);
+  margin-left:-15px;
+  margin-right:-15px;
+}
+.calendar-other {
+  background-color: rgb(236, 236, 238);
+  display: flex;
+  border-radius: 10px;
+}
+.calendar-text{
+  color: red;
+}
+
+
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.tr-1{
+  color: #07294D;
+}
+
+.breadcrump-style{
+  border:none;background-color: blue;
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+/* FOOTER COMPONENT ------------------------------------------------------------------------------------ */
+.footer{
+  background-color: #D1C4E9;
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+  /* position: fixed;
+  width: 100%; */
+  
+  /* background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+   */
+}
+.jumbotron {
+  margin:0px auto;
+  background: #1c093d ; 
+  color:floralwhite;
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+/* HOMECOMPONENT ------------------------------------------------------------------------------------- */
 /* Registration Button and FORM */
 .registration{
   height: 300px;
@@ -96,29 +277,48 @@
   font-size: 10px !important;
 }
 
-
-/* Curriculum Component*/
-
-.calendar-cardheader {
-  background: rgb(204, 180, 235);
-  margin-left:-15px;
-  margin-right:-15px;
-  margin-top:-1px;
+/* HeaderComponent1 -------------------------------------------------------------------*/
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
-.calendar-cardbody {
-  background: rgb(231, 229, 235);
-  margin-left:-15px;
-  margin-right:-15px;
+.dropdown {
+  background-color: transparent !important;
 }
-.calendar-other {
-  background-color: rgb(236, 236, 238);
+.login{
+  color: rgb(240, 28, 187);
+}
+@media (max-width: 768px) {
+  .header1-logo {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 768px) {
+  .header1-logo {
+    margin-left: 25px;
+  }
+}
+
+
+/* HEADERCOMPONENT 3  ----------------------------------------------------------------------- */
+.header3-content {
   display: flex;
-  border-radius: 10px;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  margin:50px;
 }
-.calendar-text{
-  color: red;
+.header3-logo {
+  margin-left: 30px;
 }
-
+@media (max-width: 768px) {
+  .header3-logo {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 768px) {
+  .header3-logo {
+    margin-left: 25px;
+  }
+}
 
 /* for carousel */
 .carousel-text {
@@ -236,148 +436,6 @@ h3 {
   z-index: 100;
   right: 20px !important;
 } */
-
-
-
-
-.row-header{
-  margin:0px auto;
-  padding:0px auto;
-}
-
-.tr-1{
-  color: #07294D;
-}
-
-.breadcrump-style{
-  border:none;background-color: blue;
-}
-
-.row-content {
-  margin:0px auto;
-  padding: 50px 0px 50px 0px;
-  border-bottom: 1px ridge;
-  min-height:400px;
-}
-
-.footer{
-  background-color: #D1C4E9;
-  margin:0px auto;
-  padding: 20px 0px 20px 0px;
-  /* position: fixed;
-  width: 100%; */
-  
-  /* background-color: rgb(235, 195, 64);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-   */
-}
-.jumbotron {
-  margin:0px auto;
-  background: #1c093d ; 
-  color:floralwhite;
-}
-
-address{
-  font-size:80%;
-  margin:0px;
-  color:#0f0f0f;
-}
-
-/* HeaderComponent1 -------------------------------------------------------------------*/
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-.dropdown {
-  background-color: transparent !important;
-}
-.login{
-  color: rgb(240, 28, 187);
-}
-@media (max-width: 768px) {
-  .header1-logo {
-    margin-left: 0px;
-  }
-}
-@media (min-width: 768px) {
-  .header1-logo {
-    margin-left: 25px;
-  }
-}
-
-
-/* 
-
-.header1{
-  background-color: #07294D;
-}
-
-.header1-position{
-  margin-left: 582px;
-  
-}
-
-.header2-position{
-  margin-left: 50px;
-}
-
-
-
-.navbar-text {
-  color:#FFFFFF;
-} */
-
-/* HeaderComponent2 */
-/* .header2 {
-  background-color: #FFFFFF;
-}
-.header2-logo {
-  transform: translateX(-15px);
-}
-.head{
-  padding: 20px;
-}
-.logotext{
-  font-size: 30px;
-}
-.header2-search {
-  /* text-align: right;
-  transform: translateY(-20px); */
-  /* margin-top: 15px;
-  margin-left: 10px;
-} */
-
-/* .dropdown{
-  background-color:#FFFFFF ;
-}
-.dropdowntoggle1{
-  color: #07294D;
-  background: #FFFFFF;
-  border:none;
-}  */ 
-
-/* HEADERCOMPONENT 3  ----------------------------------------------------------------------- */
-.header3-content {
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-evenly; */
-  margin:50px;
-}
-.header3-logo {
-  margin-left: 30px;
-}
-@media (max-width: 768px) {
-  .header3-logo {
-    margin-left: 0px;
-  }
-}
-@media (min-width: 768px) {
-  .header3-logo {
-    margin-left: 25px;
-  }
-}
 
 
 

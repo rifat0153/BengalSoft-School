@@ -16,10 +16,7 @@ import { Link } from 'react-router-dom';
         return (
             <div className="col-12 ">
                 <Card >
-                {/* linkto working like onclick */}
-                {/* <Link to={`/menu/${t.id}`} > */}
                     <CardImg width="100%" src={t.image} alt={t.name} />
-                    {/* <CardTitle><b>{t.name}</b></CardTitle> */}
                     <CardBody>
                         <div className="teacher-card">
                             <CardText className="teacher-cardtext">

@@ -38,12 +38,9 @@ const Header3 = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
 
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav><b>PAGES</b></DropdownToggle>
-              <DropdownMenu left>
-                <DropdownItem>About Us</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            <NavItem>
+            <NavLink href='/contact'><b>ABOUT US</b></NavLink>
+            </NavItem>
 
             <UncontrolledDropdown nav inNavbar >
               <DropdownToggle nav><b>COURSES</b></DropdownToggle>
@@ -59,12 +56,7 @@ const Header3 = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
 
-            {/* <UncontrolledDropdown nav inNavbar className="ml-auto mx-auto">
-              <DropdownToggle nav><b>TEACHERS & STAFF</b></DropdownToggle>
-              <DropdownMenu left>
-                <DropdownItem><NavLink href="/calendar">Recent Blogs</NavLink></DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown> */}
+            
             <NavItem>
               <NavLink href='/teacher'><b>TEACHERS & STAFF</b></NavLink>
             </NavItem>
@@ -72,7 +64,7 @@ const Header3 = (props) => {
             <UncontrolledDropdown nav inNavbar >
               <DropdownToggle nav><b>SHOP</b></DropdownToggle>
               <DropdownMenu left>
-                <DropdownItem><NavLink href="/calendar">Local Product</NavLink></DropdownItem>
+                <DropdownItem><NavLink href="/map">SHOP LOCATION</NavLink></DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 
