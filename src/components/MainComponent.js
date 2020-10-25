@@ -10,8 +10,10 @@ import CourseDetail from './CourseDetailComponent';
 import RegisterForm from './FormComponent';
 import Search from './SearchComponent';
 import Calendar from './CalendarComponent';
+import Teacher from './TeacherComponent';
 
 import { COURSES } from '../shared/courses';
+import { TEACHERS } from '../shared/teachers';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 
@@ -21,6 +23,7 @@ class Main extends Component {
     super(props);
     this.state = {
       courses: COURSES,
+      teachers: TEACHERS,
     };
   }
 
@@ -46,7 +49,6 @@ class Main extends Component {
     return (
       <div>
         <Header/>
-        <Header2/>
         <Header3/>
         <Switch>
           <Route path='/home' component={Home} />
@@ -55,6 +57,7 @@ class Main extends Component {
           <Route exact path='/registerform' component={RegisterForm} />
           <Route exact path='/search' component={Search} />
           <Route exact path='/calendar' component={Calendar} />
+          <Route exact path='/teacher' component={() => <Teacher teachers={this.state.teachers} />} />
           {/* <Route exact path='/contactus' component={Contact} /> */}
           <Route path='/coursedetail/:courseId' component={CourseWithId} />
           <Redirect to="/home" />

@@ -41,10 +41,10 @@ import { Link } from 'react-router-dom';
                         <BreadcrumbItem><Link to="/course">Course</Link></BreadcrumbItem>
                         <BreadcrumbItem active>{props.course.name}</BreadcrumbItem>
                     </Breadcrumb>
-                    <div className="col-12">
-                        <h3>{props.course.name}</h3>
-                        <hr />
-                    </div>                
+                <div className="col-12">
+                    <h3>{props.course.name}</h3>
+                    <hr />
+                </div>                
                 </div>
                 <div className="row">
                     <div className="col-12">
